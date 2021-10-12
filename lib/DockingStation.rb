@@ -1,6 +1,10 @@
+require './Bike.rb'
 class DockingStation
   def release_bike
-    bike = Bike.new
+    Bike.new
   end
 end
+# station= DockingStation.new
+# bike= station.release_bike
+# puts bike
 
