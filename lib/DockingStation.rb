@@ -5,8 +5,9 @@ class DockingStation
   attr_reader :bike
   DEFAULT_CAPACITY = 20 # This is the max capacity of the docking station
 
-  def initialize
+  def initialize(undefined)
     @docked_bikes = []
+    @capacity = DEFAULT_CAPACITY
   end
 
   def release_bike
@@ -38,3 +39,6 @@ class DockingStation
   end
 
 end
+
+
+# Currently we are testing initialize(argument) vs just initialize - revert to no argument to a reasonable save point
