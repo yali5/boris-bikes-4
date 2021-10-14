@@ -6,7 +6,7 @@ class DockingStation
 
   def initialize
     @docked_bikes = []
-    @max_bikes = 0 # use a number one less than the true capacity of the docking station
+    @max_bikes = 20
   end
 
   def release_bike
@@ -18,7 +18,7 @@ class DockingStation
   end
 
   def dock(bike)
-    if @docked_bikes.length <= @max_bikes
+    if @docked_bikes.length < @max_bikes
     @docked_bikes << bike
     return true
     else raise "No docks available"

@@ -42,12 +42,9 @@ describe DockingStation do
     expect{docking_station.release_bike}.to raise_error("No bikes available")
   end
 
-  it 'Docking station capaity is full returns and error when docking additional bikes' do
+  it 'Docking station capacity (20) is full returns and error when docking additional bikes' do
     docking_station = DockingStation.new
-    bike = Bike.new
-    bike2 = Bike.new
-    docking_station.dock(bike)
-    expect{docking_station.dock(bike2)}.to raise_error("No docks available")
+    20.times {docking_station.dock(Bike.new)}
+    expect{docking_station.dock(Bike.new)}.to raise_error("No docks available")
   end
-
 end
