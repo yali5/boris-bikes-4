@@ -3,10 +3,10 @@ require "./lib/Bike.rb"
 class DockingStation
 
   attr_reader :bike
+  DEFAULT_CAPACITY = 20 # This is the max capacity of the docking station
 
   def initialize
     @docked_bikes = []
-    @max_bikes = 20
   end
 
   def release_bike
@@ -20,9 +20,9 @@ class DockingStation
   end
 
   private
-  
+
   def dock_full?
-    if @docked_bikes.count >= @max_bikes
+    if @docked_bikes.count >= DEFAULT_CAPACITY
       return true
     else
       return false
@@ -38,7 +38,3 @@ class DockingStation
   end
 
 end
-# station= DockingStation.new
-# bike= station.release_bike
-# puts bike
-
