@@ -10,18 +10,29 @@ class DockingStation
   end
 
   def release_bike
-    if @docked_bikes.empty? # needs to return and error here
-      raise "No bikes available"
-    else
+    raise "No bikes available" if dock_empty?
     return Bike.new
-    end
   end
 
   def dock(bike)
-    if @docked_bikes.length < @max_bikes
+    fail "No docks available" if dock_full?
     @docked_bikes << bike
-    return true
-    else raise "No docks available"
+  end
+
+  private
+  def dock_full?
+    if @docked_bikes.count >= @max_bikes
+      return true
+    else
+      return false
+    end
+  end
+
+  def dock_empty?
+    if @docked_bikes.count == 0
+      return true
+    else
+      return false
     end
   end
 
