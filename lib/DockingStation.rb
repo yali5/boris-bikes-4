@@ -20,6 +20,7 @@ class DockingStation
   end
 
   private
+  
   def dock_full?
     if @docked_bikes.count >= @max_bikes
       return true
