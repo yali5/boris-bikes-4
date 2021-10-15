@@ -1,7 +1,7 @@
 require "./lib/Bike.rb" 
 
 class DockingStation
-  # attr_reader :capacity
+  # attr_reader :capacity # reader only
   attr_accessor :capacity # reader and writer
   attr_reader :bike
   DEFAULT_CAPACITY = 20 # This is the max capacity of the docking station
