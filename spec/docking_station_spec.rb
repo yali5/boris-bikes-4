@@ -49,4 +49,19 @@ describe DockingStation do
     docking_station = DockingStation.new(20)
     expect(DockingStation).to respond_to(:new).with(1).argument
   end
+
+  it 'Check docking station default capacity is set if no argument' do
+    # Arrange
+    # docking_station = DockingStation.new()
+    # Assert
+    expect(DockingStation.new().capacity).to eq(DockingStation::DEFAULT_CAPACITY)
+  end
+
+  it 'Check docking station changes default capacity to argument' do
+    # Arrange
+    # docking_station = DockingStation.new(5)
+    # Assert
+    expect(DockingStation.new(5).capacity).to eq(5)
+  end
+
 end
